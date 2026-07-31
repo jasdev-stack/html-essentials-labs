@@ -1,4 +1,4 @@
-#PROJECT : Creating a Webpage for a Culinary Adventure
+#PROJECT : Sunnydale School: Webpage Enhancement
 
 Scenario :
 Sunnydale School has a basic webpage that serves as an information hub for students, parents, and staff. The current page features general information about the school, including its mission, upcoming events, and contact details. While functional, the webpage lacks the interactive and visual appeal necessary to engage its audience fully. As a budding web developer, you have been approached by the school to revamp this webpage.
@@ -8,8 +8,6 @@ Your task is to apply your HTML knowledge to enhance the page's aesthetics, usab
 ## Objective
 
 Build a simple webpage using html concepts introduced in this module
-
-## Features
 
 ## Features
 
@@ -31,8 +29,6 @@ Throughout this module and project :
 - Layout
 - Global Attributes
 - Event and Data Atrributes
-
-## Reflection
 
 ## Reflection
 

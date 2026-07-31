@@ -1,4 +1,4 @@
-#PROJECT : Creating a Webpage for a Culinary Adventure
+#PROJECT : Harmony Heights: The Official Band Page
 
 Scenario :
 You've been approached by "Harmony Heights," an emerging band known for their eclectic mix of genres and compelling live performances. As they prepare to broaden their audience and establish a stronger online presence, they need a dynamic and engaging official webpage. This page will serve as a central hub for fans to explore the band's music, learn about band members, view upcoming show dates, and connect with the band.
