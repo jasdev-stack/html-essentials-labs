@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discover Your World</title>
+    <link rel="icon" href="https://edube.org/uploads/media/default/0001/04/web-favicon.png">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Discover Your World &#x1F30D;</h1>
+    <p>Click the button to learn about the continent you're on and some famous geographical features.</p>
+    <button id="getLocation">Discover Location</button>
+    <p id="result"></p>
+
+      <script>
+    const getLocationButton = document.getElementById('getLocation');
+    const resultElement = document.getElementById('result');
+
+    getLocationButton.addEventListener('click', () => {
+        if ("geolocation" in navigator) {
+
+            resultElement.textContent = "Finding your location...";
+
+            navigator.geolocation.getCurrentPosition(async (position) => {
+
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+               try {
+    // Send the user's latitude and longitude to the reverse geocoding API.
+    // The API uses these coordinates to find information about the location.
+    const response = await fetch(
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+    );
+
+    // Convert the response from the API into JSON format.
+    // The resulting data will contain information about the user's location.
+    const data = await response.json();
+
+    // Display the continent returned by the API.
+    // For example: "You are in Asia."
+    resultElement.textContent =
+        `You are in ${data.continent}.`;
+
+} catch (error) {
+
+    // If something goes wrong, such as an internet or API error,
+    // display an error message to the user.
+    resultElement.textContent =
+        "Unable to determine your continent.";
+}
+
+            });
+
+        } else {
+            resultElement.textContent =
+                "Geolocation is not supported by your browser.";
+        }
+    });
+</script>
+    
+    <img src="https://edube.org/uploads/media/default/0001/04/continents.jpg" usemap="#image-map" alt="World Map">
+    <map name="image-map">
+         <area title="North America" alt="North America" id="north-america" shape="rect" coords="386,283,41,17">
+         <area title="South America" alt="South America" id="south-america" shape="rect" coords="209,501,358,288">
+         <area title="Europe" alt="Europe" id="europe" shape="rect" coords="391,68,505,217">
+         <area title="Africa" alt="Africa" id="africa" shape="rect" coords="533,217,387,448">
+         <area title="Asia" alt="Asia" id="asia" shape="rect" coords="893,153,506,1">
+         <area title="Australia and Ocenia" alt="Australia and Ocenia" id="australia-and-ocenia" shape="rect" coords="679,353,872,480">
+    </map>
+</body>
+</html>

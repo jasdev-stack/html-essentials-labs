@@ -1,0 +1,12 @@
+// Save the theme to local storage
+localStorage.setItem('theme', 'dark');
+
+// Retrieve the theme when the user comes back
+const userTheme = localStorage.getItem('theme');
+document.body.classList.add(userTheme); // Applies the 'dark' theme
+
+"""Saving a theme setting – the code starts by saving a setting on your computer that tells the website what theme you prefer, in this case, a "dark" theme. It's like leaving a note for yourself so you remember something later.
+How it saves – it uses something called localStorage to save this note. Think of localStorage as a small, private storage space on your computer where the website can save bits of information. Here, it saves a piece of information with the label "theme" and assigns it the value "dark".
+Getting the theme back – later, when you come back to the website, the code looks into that storage space to find the note it left earlier. It checks for the "theme" label to see what you preferred.
+Applying your preference – once it finds that note and sees "dark", it knows you prefer the dark theme. So, it changes the website's appearance to dark mode. This is done by adding "dark" to the website's list of characteristics (specifically, to the body of the webpage), which triggers the dark theme to activate.
+"""
